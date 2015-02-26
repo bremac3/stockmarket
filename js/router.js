@@ -5,6 +5,7 @@ Stock.Router.map(function() {
     this.resource('stockStateSummary', {path: '/'},  function(){
         this.resource('placeBidOrder');
     });
+    this.resource('symbol', {path: 'symbol/:company_id'});
     //this.resource('posts', {path: '/'}, function(){
     //    this.resource('about');
     //});
