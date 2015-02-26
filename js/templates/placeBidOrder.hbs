@@ -1,0 +1,33 @@
+<h1>Place Bid</h1>
+
+
+<div style = "max-width:50%">
+    <form>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Number of Shares
+                    {{input value=numOfShares  id="numOfShares" type="text" }}
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Purchase Price
+                    {{input value=purchasePrice  id="purchasePrice" }}
+                </label>
+            </div>
+        </div>
+    </form>
+
+
+    <a href="#" class="button radius" {{action 'submit'}}>Submit</a>
+    <a href="#" class="button radius" {{action 'cancel'}}>Cancel</a>
+
+    <!--div with outlet for symbol-->
+
+    <ul class="circle">
+        {{#each item in model}}
+            <li>{{#link-to 'placeBidOrder'}}{{item.numOfShares}}{{/link-to}}</li>
+        {{/each}}
+    </ul>
+</div>
