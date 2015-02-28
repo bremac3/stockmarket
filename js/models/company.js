@@ -6,19 +6,23 @@ Stock.Company = DS.Model.extend({
     changeVolume: DS.attr(),
     shareVolume: DS.attr(),
     url: DS.attr(),
-    buyOrder: DS.hasMany('buyOrder')
+    buyOrder: DS.hasMany('buyOrder'),
+    sellOrder: DS.hasMany('sellOrder'),
+
+    order: function() {
+        return this.get('buyOrder') + this.get('sellOrder');
+    }.property('buyOrder','sellOrder')
 });
 
 Stock.Company.FIXTURES = [
     {
         id: 1,
-        name: 'Micro',
+        name: 'Microsoft',
         openPrice: '10',
         currentPrice: '20',
         changeVolume: '10',
         shareVolume: '15',
-        url: 'microsoft.png',
-        buyOrder: [1]
+        url: 'microsoft.png'
     },
     {
         id: 2,

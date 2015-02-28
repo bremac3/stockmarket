@@ -1,7 +1,15 @@
 
 Stock.PlaceSaleOrderRoute = Ember.Route.extend({
     model: function(params) {
-        return this.store.find('sellOrder', company_id);
+        return this.store.find('company', params.company_id);
+    },
+    renderTemplate: function() {
+        this.render('placeSaleOrder', {
+            outlet: 'test1'
+        });
+        this.render('symbol',{
+            outlet: 'test2'
+        })
     }
     //,
     //renderTemplate: function() {

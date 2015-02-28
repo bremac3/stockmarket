@@ -1,21 +1,21 @@
 <div>
     <table>
-        <tr style = "background-color:#2aabd2">
-            <td>Company</td>
-            <td>Open Price</td>
-            <td>Current Price</td>
-            <td>Change Volume - %</td>
-            <td>Share Volume</td>
-            <td></td>
+        <tr style = "text-align:center">
+            <th>Company</th>
+            <th>Open Price</th>
+            <th>Current Price</th>
+            <th>Change Volume - %</th>
+            <th>Share Volume</th>
+            <th></th>
         </tr>
         {{#each item in model}}
         <tr>
             <td>{{#link-to 'marketByOrder' item.id}}{{item.name}}{{/link-to}}</td>
             <!--don't need all these link to's-->
-            <td>{{#link-to 'stockStateSummary'}}{{item.openPrice}}{{/link-to}}</td>
-            <td>{{#link-to 'stockStateSummary'}}{{item.currentPrice}}{{/link-to}}</td>
-            <td>{{#link-to 'stockStateSummary'}}{{item.changeVolume}}{{/link-to}}</td>
-            <td>{{#link-to 'stockStateSummary'}}{{item.shareVolume}}{{/link-to}}</td>
+            <td>{{item.openPrice}}</td>
+            <td>{{item.currentPrice}}</td>
+            <td>{{item.changeVolume}}</td>
+            <td>{{item.shareVolume}}</td>
             <td><button href="#" {{action 'buy' item.id}}>Buy</button> <button href="#" {{action 'sell' item.id}}>Sell</button></td>
 
         </tr>
