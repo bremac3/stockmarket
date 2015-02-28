@@ -1,7 +1,16 @@
 
 Stock.PlaceBidOrderRoute = Ember.Route.extend({
-    model: function() {
-        return this.store.find('buyOrder');
+    model: function(params) {
+        console.log(params)
+        //return this.store.find('buyOrder', params.company_id);
+        return this.store.find('company', params.company_id);
+    },
+    renderTemplate: function() {
+        this.render('placeBidOrder', {
+            outlet: 'test1'
+        });
+        this.render('symbol',{
+            outlet: 'test2'
+        })
     }
-
 });

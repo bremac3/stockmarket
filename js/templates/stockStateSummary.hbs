@@ -1,4 +1,4 @@
-<div style = "max-width:100%">
+<div>
     <table>
         <tr style = "background-color:#2aabd2">
             <td>Company</td>
@@ -10,12 +10,13 @@
         </tr>
         {{#each item in model}}
         <tr>
-            <td>{{#link-to 'stockStateSummary'}}{{item.name}}{{/link-to}}</td>
+            <td>{{#link-to 'marketByOrder' item.id}}{{item.name}}{{/link-to}}</td>
+            <!--don't need all these link to's-->
             <td>{{#link-to 'stockStateSummary'}}{{item.openPrice}}{{/link-to}}</td>
             <td>{{#link-to 'stockStateSummary'}}{{item.currentPrice}}{{/link-to}}</td>
             <td>{{#link-to 'stockStateSummary'}}{{item.changeVolume}}{{/link-to}}</td>
             <td>{{#link-to 'stockStateSummary'}}{{item.shareVolume}}{{/link-to}}</td>
-            <td><button href="#" {{action 'buy'}}>Buy</button> <button href="#" {{action 'sell'}}>Sell</button></td>
+            <td><button href="#" {{action 'buy' item.id}}>Buy</button> <button href="#" {{action 'sell' item.id}}>Sell</button></td>
 
         </tr>
         {{/each}}
@@ -23,7 +24,11 @@
 </div>
 
 <div>
+
+
+    <div>{{outlet "test1"}}</div>
+    <div>{{outlet "test2"}}</div>
+    <div>{{outlet "symbol"}}</div>
     {{outlet}}
 </div>
 
-<a href="#" class="button radius" {{action 'load'}}>Load</a>

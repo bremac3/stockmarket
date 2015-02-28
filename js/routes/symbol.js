@@ -4,4 +4,5 @@ Stock.SymbolRoute = Ember.Route.extend({
         return this.store.find('company', params.company_id);
     }
 
+
 });

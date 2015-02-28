@@ -1,8 +1,7 @@
-<div style = "max-width:50%;float:left;">
-<h3>Place Bid</h3>
 
+<h1>Place Sale Order</h1>
 
-<div>
+<div style = "max-width:50%">
     <form>
         <div class="row">
             <div class="large-12 columns">
@@ -26,6 +25,9 @@
 
     <!--div with outlet for symbol-->
 
-
-</div>
+    <ul class="circle">
+        {{#each item in model}}
+            <li>{{#link-to 'placeSaleOrder'}}{{item.numOfShares}}{{/link-to}}</li>
+        {{/each}}
+    </ul>
 </div>

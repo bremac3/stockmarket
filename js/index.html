@@ -15,17 +15,20 @@
 
 <script src="controllers/placeBidOrder.js"></script>
 <script src="controllers/stockStateSummary.js"></script>
-<!--&lt;!&ndash;<script src="controllers/post.js"></script>&ndash;&gt;-->
+<script src="controllers/placeSaleOrder.js"></script>
 <!--&lt;!&ndash;<script src="controllers/addNewPost.js"></script>&ndash;&gt;-->
 <!--&lt;!&ndash;<script src="controllers/posts.js"></script>&ndash;&gt;-->
 <!--&lt;!&ndash;<script src="controllers/company.js"></script>&ndash;&gt;-->
 
 <script src="models/buyOrder.js"></script>
 <script src="models/company.js"></script>
+<script src="models/sellOrder.js"></script>
 
 <script src="routes/placeBidOrder.js"></script>
 <script src="routes/stockStateSummary.js"></script>
 <script src="routes/symbol.js"></script>
+<script src="routes/marketByOrder.js"></script>
+<script src="routes/placeSaleOrder.js"></script>
 
 <script>
 //    EmberHandlebarsLoader.loadTemplates([
@@ -33,12 +36,13 @@
 //        'post', 'addNewPost', 'company'
 //    ]);
     EmberHandlebarsLoader.loadTemplates([
-       'application','placeBidOrder','stockStateSummary', 'symbol'
+       'application','placeBidOrder','stockStateSummary', 'symbol',
+       'marketByOrder', 'marketByPrice', 'placeSaleOrder'
     ]);
 </script>
 
 </head>
 <body>
-    test
+
 </body>
 </html>

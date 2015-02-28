@@ -3,9 +3,15 @@ Stock.Router.map(function() {
 
      // this.resource('stockStateSummary');
     this.resource('stockStateSummary', {path: '/'},  function(){
-        this.resource('placeBidOrder');
+        this.resource('placeBidOrder', {path: '/placeBidOrder/:company_id'});
+        this.resource('marketByOrder', {path: '/market/:company_id'});
+        this.resource('marketByPrice', {path: '/markets/:company_id'});
+        this.resource('placeSaleOrder');
+            //function(){
+        //    this.resource('symbol', {path: ':company_id'});
+        //});
     });
-    this.resource('symbol', {path: 'symbol/:company_id'});
+   // this.resource('symbol', {path: ':company_id'});
     //this.resource('posts', {path: '/'}, function(){
     //    this.resource('about');
     //});
