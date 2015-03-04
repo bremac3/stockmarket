@@ -5,8 +5,6 @@ Stock.StockStateSummaryController = Ember.ObjectController.extend({
         buy: function(company_id){
             console.log("buying");
             console.log(company_id);
-            //this.store.unloadAll('company');
-            //this.store.destroy();
             this.transitionToRoute('placeBidOrder', company_id);
 
         },
@@ -15,5 +13,10 @@ Stock.StockStateSummaryController = Ember.ObjectController.extend({
             console.log(company_id);
             this.transitionToRoute('placeSaleOrder', company_id);
         }
-    }
+    },
+    //model: company,
+    //sortProperties: ['name'],
+    //sortDescending: true,
+    sortProperties: ['name'],
+    sortedCompanies: Ember.computed.sort('model', 'sortProperties')
 });

@@ -6,10 +6,10 @@ Stock.MarketByOrderRoute = Ember.Route.extend({
     ,
     renderTemplate: function() {
         this.render('marketByOrder', {
-           outlet: 'test1'
+           outlet: 'outlet1'
         });
         this.render('marketByPrice', {
-            outlet: 'test2'
+            outlet: 'outlet2'
         });
         this.render('symbol',{
             outlet: 'symbol'

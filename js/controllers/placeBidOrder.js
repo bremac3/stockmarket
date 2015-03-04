@@ -4,13 +4,14 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
 
         submit: function(company_id){
             console.log("submitting");
-            console.log(company_id)
+            console.log(company_id.id)
             var newPurchase = this.store.createRecord('buyOrder', {
                 companyId: company_id,
                 numOfShares: this.get('numOfShares'),
                 purchasePrice: this.get('purchasePrice')
             });
             newPurchase.save();
+            this.transitionToRoute('/market/'+company_id.id);
         },
         cancel: function(){
             console.log("cancel");
@@ -37,5 +38,9 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
         //    newPost.save();
         //    this.transitionToRoute('posts');
         //}
-    }
+    },
+    //,
+    //sortProperties: ['numOfShares'],
+    //sortAscending: true
+
 });

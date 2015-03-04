@@ -7,10 +7,10 @@ Stock.PlaceBidOrderRoute = Ember.Route.extend({
     },
     renderTemplate: function() {
         this.render('placeBidOrder', {
-            outlet: 'test1'
+            outlet: 'outlet1'
         });
         this.render('symbol',{
-            outlet: 'test2'
+            outlet: 'symbol'
         })
     }
 });

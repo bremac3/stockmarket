@@ -1,8 +1,8 @@
 
 Stock.BuyOrder = DS.Model.extend({
     companyId: DS.belongsTo('company'),
-    numOfShares: DS.attr(),
-    purchasePrice: DS.attr()
+    numOfShares: DS.attr('number'),
+    purchasePrice: DS.attr('number')
 });
 
 //Stock.BuyOrder.FIXTURES = [

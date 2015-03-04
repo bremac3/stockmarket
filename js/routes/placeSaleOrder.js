@@ -5,10 +5,10 @@ Stock.PlaceSaleOrderRoute = Ember.Route.extend({
     },
     renderTemplate: function() {
         this.render('placeSaleOrder', {
-            outlet: 'test1'
+            outlet: 'outlet1'
         });
         this.render('symbol',{
-            outlet: 'test2'
+            outlet: 'symbol'
         })
     }
     //,

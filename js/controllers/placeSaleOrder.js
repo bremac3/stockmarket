@@ -10,6 +10,7 @@ Stock.PlaceSaleOrderController = Ember.ObjectController.extend({
                 purchasePrice: this.get('purchasePrice')
             });
             newPurchase.save();
+            this.transitionToRoute('/market/'+company_id.id)
         },
         cancel: function() {
             console.log("cancel");

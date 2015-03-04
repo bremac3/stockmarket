@@ -1,27 +1,10 @@
 
 <div style = "max-width:40%;float:left">
-    <h3>Market By Order</h3>
-    <table>
-        <tr>
-            <th style = "text-align:center" colspan="2">Buy</th>
-            <th style = "text-align:center" colspan="2">Sell</th>
-        </tr>
-        <tr>
-            <td>Volume</td>
-            <td>Price</td>
-            <td>Price</td>
-            <td>Volume</td>
-        </tr>
-        {{#each buyOrder in model.buyOrder}}{{#each sellOrder in model.sellOrder}}
-        <tr>
-            <td>{{buyOrder.numOfShares}}</td>
-            <td>{{buyOrder.purchasePrice}}</td>
-            <td>{{sellOrder.numOfShares}}</td>
-            <td>{{sellOrder.purchasePrice}}</td>
-        <tr>
-        {{/each}}{{/each}}
-        </tr>
-    </table>
+    <h3>Market By Order<br>
+        {{model.name}}
+    </h3>
+
+    {{createTable sortedBuyOrders sortedSellOrders}}
 
 
 </div>

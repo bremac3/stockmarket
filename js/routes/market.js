@@ -1,12 +1,16 @@
 
-Stock.MareketRoute = Ember.Route.extend({
+Stock.MarketRoute = Ember.Route.extend({
+    //model: function(params) {
+    //    return this.store.find('company', params.company_id);
+    //}
+    //,
     renderTemplate: function() {
         console.log('rendering templates');
     this.render('marketByOrder', {
-        outlet: 'test1'
+        outlet: 'outlet1'
     });
     this.render('marketByPrice', {
-        outlet: 'test2'
+        outlet: 'outlet2'
     });
     this.render('symbol',{
         outlet: 'symbol'

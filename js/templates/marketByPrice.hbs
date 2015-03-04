@@ -1,19 +1,8 @@
 
-<div style = "max-width:40%;float:left;padding-left:100px">
-    <h3>Market By Price</h3>
+<div style = "max-width:50%;float:left;padding-left:50px">
+    <h3>Market By Price </br>
+    {{model.name}}</h3>
 
-    <table>
-        <tr>
-            <th style = "text-align:center" colspan="3">Buy</th>
-            <th style = "text-align:center" colspan="3">Sell</th>
-        </tr>
-        <tr>
-            <td>#</td>
-            <td>Volume</td>
-            <td>Price</td>
-            <td>Price</td>
-            <td>Volume</td>
-            <td>#</td>
-        </tr>
-    </table>
+    {{createMarketByPrice sortedBuyOrders sortedSellOrders}}
+
 </div>
