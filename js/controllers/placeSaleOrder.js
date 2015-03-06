@@ -2,15 +2,15 @@
 Stock.PlaceSaleOrderController = Ember.ObjectController.extend({
     actions: {
 
-        submit: function(company_id){
+        submit: function(company){
             console.log("submitting");
             var newPurchase = this.store.createRecord('sellOrder', {
-                companyId: company_id,
+                company: company,
                 numOfShares: this.get('numOfShares'),
                 purchasePrice: this.get('purchasePrice')
             });
-            newPurchase.save();
-            this.transitionToRoute('/market/'+company_id.id)
+            //newPurchase.save();
+            this.transitionToRoute('/market/'+company.id)
         },
         cancel: function() {
             console.log("cancel");

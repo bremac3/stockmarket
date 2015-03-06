@@ -1,9 +1,10 @@
 
 Stock.MarketRoute = Ember.Route.extend({
-    //model: function(params) {
-    //    return this.store.find('company', params.company_id);
-    //}
-    //,
+    model: function(params) {
+        //console.log(this.store.find('company', params.company_id));
+        return this.store.find('company', params.company_id);
+    }
+    ,
     renderTemplate: function() {
         console.log('rendering templates');
     this.render('marketByOrder', {

@@ -1,6 +1,4 @@
 Ember.Handlebars.helper('createTable', function(buyOrders, sellOrders, options){
-    console.log(buyOrders);
-    console.log(buyOrders.length);
 
     var length = (buyOrders.length < sellOrders.length) ? sellOrders.length : buyOrders.length;
 
@@ -69,8 +67,8 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
             build += '<td></td><td></td><td></td>';
         }
         if(i < sellOrders.length){
-            build += '<td>' + sellOrders[i].get('purchasePrice') + '</td>';
             build += '<td>' + sellOrders[i].get('numOfShares') + '</td>';
+            build += '<td>' + sellOrders[i].get('purchasePrice') + '</td>';
             build += '<td>0</td>';
         }
         else{//buy orders is done
@@ -78,9 +76,6 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
         }
         build+='</tr>';
     }
-
-
-
 
     return new Ember.Handlebars.SafeString(build);
 });

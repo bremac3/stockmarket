@@ -1,6 +1,6 @@
 
 Stock.BuyOrder = DS.Model.extend({
-    companyId: DS.belongsTo('company'),
+    company: DS.belongsTo('company'),
     numOfShares: DS.attr('number'),
     purchasePrice: DS.attr('number')
 });
