@@ -21,7 +21,7 @@ img {
 
 /* warpper element -> wraps section and footer */
 #wrapper{
-	max-width: 1040px;
+	max-width: 1060px;
 	margin: 0 auto;
 	padding: 0 5%;
 	display: block;

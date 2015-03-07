@@ -14,7 +14,7 @@
                 <th>Current Price</th>
                 <th>Change Volume - %</th>
                 <th>Share Volume</th>
-                <th></th>
+                <th> </th>
             </tr>
             {{#each item in sortedCompanies}}
             <tr>
@@ -22,7 +22,6 @@
                 <td>{{item.openPrice}}</td>
                 <td>{{item.currentPrice}}</td>
                 <td>{{item.changeVolume}}&nbsp;<img {{bind-attr src="item.changeUrl"}}/>&nbsp;{{item.changePercent}}</td>
-                <td>{{item.changeVolume}}</td>
                 <td>{{item.shareVolume}}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group" aria-label="...">
