@@ -1,4 +1,3 @@
-
 Stock.MarketByOrderController = Ember.ObjectController.extend({
 
     sortBuyProperties: ['purchasePrice:desc'],
