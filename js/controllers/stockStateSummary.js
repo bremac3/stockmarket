@@ -28,7 +28,7 @@ Stock.StockStateSummaryController = Ember.ArrayController.extend({
         sell: function(company_id){
             console.log("selling ");
             console.log(company_id);
-            this.transitionToRoute('placeSaleOrder', company_id);
+            this.transitionToRoute('placeSellOrder', company_id);
         },
         mostActive: function() {
             $("a").parent().removeClass("active");

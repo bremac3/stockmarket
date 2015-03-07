@@ -1,4 +1,4 @@
-Stock.PlaceSaleOrderController = Ember.ObjectController.extend({
+Stock.PlaceSellOrderController = Ember.ObjectController.extend({
     sortBuyProperties: ['purchasePrice:desc'],
     sortedBuyOrder: Ember.computed.sort('model.buyOrder', 'sortBuyProperties'),
     sortSellProperties: ['purchasePrice:asc'],
@@ -84,11 +84,11 @@ Stock.PlaceSaleOrderController = Ember.ObjectController.extend({
                 });
             }
 
-            this.transitionToRoute('/market/'+company.id)
+            this.transitionToRoute('marketByOrder', company.id)
         },
         cancel: function() {
             console.log("cancel");
-            this.transitionToRoute('/');
+            this.transitionToRoute('stockStateSummary');
         }
     }
 });

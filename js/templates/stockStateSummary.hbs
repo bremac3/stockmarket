@@ -1,11 +1,13 @@
 <div id="wrapper">
     <hr>
     <div>
-        <ul class="nav nav-pills nav-justified" style="margin-bottom: 1em">
-            <li><a href="#" {{ action "mostActive" }}>Most Active by Volume</a></li>
-            <li><a href="#" {{ action "gainers" }}>Gainers</a></li>
-            <li><a href="#" {{ action "losers" }}>Losers</a></li>
-        </ul>
+        <nav class="navbar navbar-default">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="#" {{ action "mostActive" }}>Most Active by Volume</a></li>
+                <li><a href="#" {{ action "gainers" }}>Gainers</a></li>
+                <li><a href="#" {{ action "losers" }}>Losers</a></li>
+            </ul>
+        </nav>
         
         <table class="table table-striped table-bordered table-hover">
             <tr style="text-align:center">

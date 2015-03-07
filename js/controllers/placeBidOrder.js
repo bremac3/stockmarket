@@ -5,7 +5,6 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
     sortedSellOrder: Ember.computed.sort('model.sellOrder', 'sortSellProperties'),
 
     actions: {
-
         submit: function (company) {
             var sellOrder = this.get('sortedSellOrder');
             var buyShares = this.get('numOfShares');
@@ -84,12 +83,12 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
                     purchasePrice: this.get('purchasePrice')
                 });
             }
-            this.transitionToRoute('/market/' + company.id);
+            this.transitionToRoute('marketByOrder', company.id);
         },
 
         cancel: function () {
             console.log("cancel");
-            this.transitionToRoute('/');
+            this.transitionToRoute('stockStateSummary');
         }
     }
 });

@@ -60,3 +60,7 @@ img {
 td, th {
 	text-align: center;
 }
+
+ul.nav {
+	padding: 5px;
+}

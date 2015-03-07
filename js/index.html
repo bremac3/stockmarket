@@ -14,30 +14,30 @@
 	<script src="libs/ember-data.js"></script>
 	<script src="libs/localstorage-adapter-0.3.2.js"></script>
 
-
 	<script src="stock.js"></script>
 	<script src="router.js"></script>
-
-	<script src="controllers/placeBidOrder.js"></script>
-	<script src="controllers/stockStateSummary.js"></script>
-	<script src="controllers/placeSaleOrder.js"></script>
-	<script src="controllers/marketByOrder.js"></script>
 
 	<script src="models/buyOrder.js"></script>
 	<script src="models/company.js"></script>
 	<script src="models/sellOrder.js"></script>
 
+	<script src="controllers/placeBidOrder.js"></script>
+	<script src="controllers/stockStateSummary.js"></script>
+	<script src="controllers/placeSellOrder.js"></script>
+	<script src="controllers/marketByOrder.js"></script>
+
+	<script src="routes/application.js"></script>
 	<script src="routes/placeBidOrder.js"></script>
 	<script src="routes/stockStateSummary.js"></script>
 	<script src="routes/marketByOrder.js"></script>
-	<script src="routes/placeSaleOrder.js"></script>
+	<script src="routes/placeSellOrder.js"></script>
 
 	<script src="helpers/helper.js"></script>
 
 	<script>
 	EmberHandlebarsLoader.loadTemplates([
 	   'application','placeBidOrder','stockStateSummary', 'symbol',
-	   'marketByOrder', 'marketByPrice', 'placeSaleOrder'
+	   'marketByOrder', 'marketByPrice', 'placeSellOrder'
 	]);
 	</script>
 
