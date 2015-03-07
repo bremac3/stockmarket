@@ -42,7 +42,7 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
 
     var build = '<table>' +
                 '<tr>' +
-                    '<th style = "text-align:center" colspan="3">Sell</th>' +
+                    '<th style = "text-align:center" colspan="3">Buy</th>' +
                 '<th style = "text-align:center" colspan="3">Sell</th>' +
                 '</tr>' +
                 '<tr>' +
@@ -60,8 +60,8 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
         build += '<tr>';
         if (i < buyOrders.length) {
             build += '<td>0</td>';
-            build += '<td>' + buyOrders[i].get('numOfShares') + '</td>';
             build += '<td>' + buyOrders[i].get('purchasePrice') + '</td>';
+            build += '<td>' + buyOrders[i].get('numOfShares') + '</td>';
         }
         else {//buy orders is done
             build += '<td></td><td></td><td></td>';

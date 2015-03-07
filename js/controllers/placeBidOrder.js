@@ -26,7 +26,7 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
 
                         console.log('case 1');
 
-                        var buyShares = buyShares - sellOrder[i].get('numOfShares');
+                        buyShares = buyShares - sellOrder[i].get('numOfShares');
                         this.store.find('sellOrder', sellOrder[i].id).then(function(sellOrder){
                             sellOrder.destroyRecord();
                         });
@@ -77,11 +77,6 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
                 });
             }
 
-
-
-
-
-            //newPurchase.save();
             this.transitionToRoute('/market/'+company.id);
         },
 

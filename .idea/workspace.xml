@@ -44,12 +44,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="placeBidOrder.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="placeBidOrder.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers/placeBidOrder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15632755" vertical-offset="974" max-vertical-offset="2091">
-              <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="2006">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="placeSaleOrder.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/controllers/placeSaleOrder.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.67493796" vertical-offset="170" max-vertical-offset="1751">
+              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/helpers/helper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="906" max-vertical-offset="1462">
+              <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+              <folding>
+                <marker date="1425689385152" expanded="true" signature="272:289" placeholder="..." />
+                <marker date="1425689385152" expanded="true" signature="345:362" placeholder="..." />
+                <marker date="1425689385152" expanded="true" signature="1604:1621" placeholder="..." />
+                <marker date="1425689385152" expanded="true" signature="1677:1694" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,16 +111,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="symbol.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/templates/symbol.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="204">
-              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="stockStateSummary.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/templates/stockStateSummary.hbs">
           <provider selected="true" editor-type-id="text-editor">
@@ -112,18 +127,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
               <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="marketByPrice.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/routes/marketByPrice.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -155,8 +158,6 @@
         <option value="$PROJECT_DIR$/js/controllers/marketByOrder.js" />
         <option value="$PROJECT_DIR$/js/models/buyOrder.js" />
         <option value="$PROJECT_DIR$/js/models/sellOrder.js" />
-        <option value="$PROJECT_DIR$/js/helpers/helper.js" />
-        <option value="$PROJECT_DIR$/js/controllers/placeSaleOrder.js" />
         <option value="$PROJECT_DIR$/js/routes/marketByOrder.js" />
         <option value="$PROJECT_DIR$/js/routes/market.js" />
         <option value="$PROJECT_DIR$/js/templates/stockStateSummary.hbs" />
@@ -166,6 +167,8 @@
         <option value="$PROJECT_DIR$/js/templates/marketByPrice.hbs" />
         <option value="$PROJECT_DIR$/js/controllers/marketByPrice.js" />
         <option value="$PROJECT_DIR$/js/controllers/placeBidOrder.js" />
+        <option value="$PROJECT_DIR$/js/helpers/helper.js" />
+        <option value="$PROJECT_DIR$/js/controllers/placeSaleOrder.js" />
       </list>
     </option>
   </component>
@@ -529,19 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/helpers/helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <marker date="1425587177027" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425587177027" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425587177027" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425587177027" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
@@ -562,14 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
           <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/placeSaleOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -668,10 +650,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/helpers/helper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="906" max-vertical-offset="1462">
+          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+          <folding>
+            <marker date="1425689385152" expanded="true" signature="272:289" placeholder="..." />
+            <marker date="1425689385152" expanded="true" signature="345:362" placeholder="..." />
+            <marker date="1425689385152" expanded="true" signature="1604:1621" placeholder="..." />
+            <marker date="1425689385152" expanded="true" signature="1677:1694" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/placeBidOrder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15632755" vertical-offset="974" max-vertical-offset="2091">
-          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="2006">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/placeSaleOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67493796" vertical-offset="170" max-vertical-offset="1751">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
           <folding />
         </state>
       </provider>
