@@ -15,22 +15,24 @@ Ember.Handlebars.helper('createTable', function(buyOrders, sellOrders, options){
                 '<td>Volume</td>' +
             '</tr>';
     for(var i = 0; i < length; i++) {
-        build += '<tr>';
-        if (i < buyOrders.length) {
-            build += '<td>' + buyOrders[i].get('numOfShares') + '</td>';
-            build += '<td>' + buyOrders[i].get('purchasePrice') + '</td>';
+        if (i < 10) {
+            build += '<tr>';
+            if (i < buyOrders.length) {
+                build += '<td>' + buyOrders[i].get('numOfShares') + '</td>';
+                build += '<td>' + buyOrders[i].get('purchasePrice') + '</td>';
+            }
+            else {//buy orders is done
+                build += '<td></td><td></td>';
+            }
+            if(i < sellOrders.length){
+                build += '<td>' + sellOrders[i].get('purchasePrice') + '</td>';
+                build += '<td>' + sellOrders[i].get('numOfShares') + '</td>';
+            }
+            else{//buy orders is done
+                build += '<td></td><td></td>';
+            }
+            build+='</tr>';
         }
-        else {//buy orders is done
-            build += '<td></td><td></td>';
-        }
-        if(i < sellOrders.length){
-            build += '<td>' + sellOrders[i].get('purchasePrice') + '</td>';
-            build += '<td>' + sellOrders[i].get('numOfShares') + '</td>';
-        }
-        else{//buy orders is done
-            build += '<td></td><td></td>';
-        }
-        build+='</tr>';
     }
     build+='</table>';
     return new Ember.Handlebars.SafeString(build);
@@ -116,21 +118,26 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
     //add the buy column
 
     for(var i = 0; i < length; i++){
-        build += '<tr>';
-        if (i < buyGroups.length) {
-            build += '<td>' + buyGroups[i].count + '</td>';
-            build += '<td>' + buyGroups[i].price + '</td>';
-            build += '<td>' + buyGroups[i].shares + '</td>';
+       if (i < 10) {
+            build += '<tr>';
+            if (i < buyGroups.length) {
+                build += '<td>' + buyGroups[i].count + '</td>';
+                build += '<td>' + buyGroups[i].price + '</td>';
+                build += '<td>' + buyGroups[i].shares + '</td>';
+            }
+            else {
+                build += '<td></td><td></td><td></td>';
+            }
+            if(i < sellOrders.length){
+                build += '<td>' + sellGroups[i].shares + '</td>';
+                build += '<td>' + sellGroups[i].price + '</td>';
+                build += '<td>' + sellGroups[i].count + '</td>';
+            }
+            else{//buy orders is done
+                build += '<td></td><td></td><td></td>';
+            }
+            build+='</tr>';
         }
-        if(i < sellOrders.length){
-            build += '<td>' + sellGroups[i].shares + '</td>';
-            build += '<td>' + sellGroups[i].price + '</td>';
-            build += '<td>' + sellGroups[i].count + '</td>';
-        }
-        else{//buy orders is done
-            build += '<td></td><td></td><td></td>';
-        }
-        build+='</tr>';
     }
 
     return new Ember.Handlebars.SafeString(build);
