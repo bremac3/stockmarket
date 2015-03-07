@@ -121,10 +121,10 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
             build += '<td>' + buyGroups[i].count + '</td>';
             build += '<td>' + buyGroups[i].price + '</td>';
             build += '<td>' + buyGroups[i].shares + '</td>';
-        if (i < buyOrders.length) {
-            build += '<td>0</td>';
-            build += '<td>' + buyOrders[i].get('purchasePrice') + '</td>';
-            build += '<td>' + buyOrders[i].get('numOfShares') + '</td>';
+        //if (i < buyOrders.length) {
+        //    build += '<td>0</td>';
+        //    build += '<td>' + buyOrders[i].get('purchasePrice') + '</td>';
+        //    build += '<td>' + buyOrders[i].get('numOfShares') + '</td>';
         }
         else {//buy orders is done
             build += '<td></td><td></td><td></td>';
