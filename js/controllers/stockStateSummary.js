@@ -25,9 +25,6 @@ Stock.StockStateSummaryController = Ember.ObjectController.extend({
             $("a:contains('Losers')").parent().addClass("active");
         }
     },
-    //model: company,
-    //sortProperties: ['name'],
-    //sortDescending: true,
     sortProperties: ['name'],
     sortedCompanies: Ember.computed.sort('model', 'sortProperties')
 });
