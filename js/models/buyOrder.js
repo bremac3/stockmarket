@@ -4,11 +4,3 @@ Stock.BuyOrder = DS.Model.extend({
     numOfShares: DS.attr('number'),
     purchasePrice: DS.attr('number')
 });
-
-//Stock.BuyOrder.FIXTURES = [
-//    {
-//        id: 1,
-//        numOfShares: '10',
-//        purchasePrice: '20'
-//    }
-//];

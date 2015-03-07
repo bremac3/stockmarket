@@ -1,7 +1,6 @@
 
 Stock.MarketRoute = Ember.Route.extend({
     model: function(params) {
-        //console.log(this.store.find('company', params.company_id));
         return this.store.find('company', params.company_id);
     }
     ,

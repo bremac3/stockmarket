@@ -19,61 +19,56 @@ Stock.Company.FIXTURES =
             id: 1,
             name: "Microsoft Corporation (MSFT)",
             openPrice: 42.59,
-            url: 'microsoft.png'
+            currentPrice: 0,
+            changeVolume: 0,
+            changePercent: 0,
+            shareVolume: 0,
+            url: 'images/microsoft.png',
+            changeUrl: 'images/noChange.png'
         },
         {
             id: 2,
             name: "Apple Inc. (AAPL)",
             openPrice: 121.62,
-            url: 'apple.png'
+            currentPrice: 0,
+            changeVolume: 0,
+            changePercent: 0,
+            shareVolume: 0,
+            url: 'images/apple.png',
+            changeUrl: 'images/noChange.png'
         },
         {
             id: 3,
             name: "Facebook, Inc. (FB)",
             openPrice: 74.98,
-            url: 'facebook.png'
+            currentPrice: 0,
+            changeVolume: 0,
+            changePercent: 0,
+            shareVolume: 0,
+            url: 'images/facebook.png',
+            changeUrl: 'images/noChange.png'
         },
         {
             id: 4,
             name: "Cisco Systems, Inc.",
             openPrice: 27.41,
-            url: 'cisco.png'
+            currentPrice: 0,
+            changeVolume: 0,
+            changePercent: 0,
+            shareVolume: 0,
+            url: 'images/cisco.png',
+            changeUrl: 'images/noChange.png'
         },
         {
             id: 5,
             name: "Intel Corporation",
             openPrice: 0.55,
-            url: 'intel.png'
+            currentPrice: 0,
+            changeVolume: 0,
+            changePercent: 0,
+            shareVolume: 0,
+            url: 'images/intel.png',
+            changeUrl: 'images/noChange.png'
         }
     ];
 
-//
-//Stock.Company.FIXTURES = [
-//    {
-//        id: 1,
-//        name: 'Microsoft',
-//        openPrice: '10',
-//        currentPrice: '20',
-//        changeVolume: '10',
-//        shareVolume: '15',
-//        url: 'microsoft.png'
-//    },
-//    {
-//        id: 2,
-//        name: 'Facebook',
-//        openPrice: '10',
-//        currentPrice: '20',
-//        changeVolume: '10',
-//        shareVolume: '15',
-//        url: 'facebook.png'
-//    },
-//    {
-//        id: 3,
-//        name: 'Apple',
-//        openPrice: '10',
-//        currentPrice: '20',
-//        changeVolume: '10',
-//        shareVolume: '15',
-//        url: 'apple.jpg'
-//    }
-//];
