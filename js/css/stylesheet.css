@@ -28,17 +28,32 @@ img {
 	clear: both;
 }
 
+#display {
+	max-width: 100%;
+	margin: 0 0 3em;
+}
+
 /* order forms */
 .placeorder {
-	width:40%;
-	float:left;
+	width: 40%;
+	float: left;
 }
 
 /* symbol */
 .symbol {
-	max-width:20%;
-	float:left;
-	padding-left:50px
+	display: inline-block;
+}
+
+/* market by order and by price tables */
+.byorder {
+	float: left;
+	display: inline-block;
+}
+
+.byprice {
+	float: left;
+	padding: 0 1.5em;
+	display: inline-block;
 }
 
 td, th {

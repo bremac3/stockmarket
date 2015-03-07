@@ -1,4 +1,3 @@
-
 Stock.PlaceBidOrderController = Ember.ObjectController.extend({
     sortBuyProperties: ['purchasePrice:desc'],
     sortedBuyOrders: Ember.computed.sort('model.buyOrder', 'sortBuyProperties'),

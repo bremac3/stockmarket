@@ -3,7 +3,7 @@ Ember.Handlebars.helper('createTable', function(buyOrders, sellOrders, options){
     var length = (buyOrders.length < sellOrders.length) ? sellOrders.length : buyOrders.length;
 
     var build = '';
-    build+='<table class="table table-bordered">'+
+    build+='<table class="table table-bordered table-striped">'+
             '<tr class="active">' +
                 '<th colspan="2">Buy</th>' +
                 '<th colspan="2">Sell</th>' +
@@ -99,7 +99,7 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
 
     var length =  buyGroups.length < sellGroups.length ? sellGroups.length : buyGroups.length;
 
-    var build = '<table class="table table-bordered">' +
+    var build = '<table class="table table-bordered table-striped">' +
                 '<tr class="active">' +
                     '<th colspan="3">Buy</th>' +
                     '<th colspan="3">Sell</th>' +
