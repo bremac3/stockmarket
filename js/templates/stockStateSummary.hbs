@@ -1,38 +1,4 @@
-<<<<<<< HEAD
-<div>
-    <a href="#">Most Active by Volume</a>
-    <a href="#">Gainers</a>
-    <a href="#">Losers</a>
 
-    <table>
-        <tr style = "text-align:center">
-            <th>Company</th>
-            <th>Open Price</th>
-            <th>Current Price</th>
-            <th>Change Volume - %</th>
-            <th>Share Volume</th>
-            <th></th>
-        </tr>
-        {{#each item in sortedCompanies}}
-        <tr>
-            <td>{{#link-to 'marketByOrder' item.id}}{{item.name}}{{/link-to}}</td>
-            <td>{{item.openPrice}}</td>
-            <td>{{item.currentPrice}}</td>
-            <td>{{item.changeVolume}}&nbsp;<img {{bind-attr src="item.changeUrl"}}/>&nbsp;{{item.changePercent}}</td>
-            <td>{{item.shareVolume}}</td>
-            <td><button href="#" {{action 'buy' item.id}}>Buy</button> <button href="#" {{action 'sell' item.id}}>Sell</button></td>
-        </tr>
-        {{/each}}
-    </table>
-</div>
-
-<div>
-
-
-    <div>{{outlet "outlet1"}}</div>
-    <div>{{outlet "outlet2"}}</div>
-    <div>{{outlet "symbol"}}</div>
-=======
 <div id="wrapper">
     <hr>
     <div>
@@ -41,7 +7,6 @@
             <li><a href="#" {{ action "gainers" }}>Gainers</a></li>
             <li><a href="#" {{ action "losers" }}>Losers</a></li>
         </ul>
->>>>>>> cef756cb05730f01f0ec820f1e974af31ecda920
 
         <table class="table table-striped">
             <tr style="text-align:center">
@@ -57,7 +22,7 @@
                 <td>{{#link-to 'marketByOrder' item.id}}{{item.name}}{{/link-to}}</td>
                 <td>{{item.openPrice}}</td>
                 <td>{{item.currentPrice}}</td>
-                <td>{{item.changeVolume}}</td>
+                <td>{{item.changeVolume}}&nbsp;<img {{bind-attr src="item.changeUrl"}}/>&nbsp;{{item.changePercent}}</td>
                 <td>{{item.shareVolume}}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group" aria-label="...">
