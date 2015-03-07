@@ -3,10 +3,10 @@ Ember.Handlebars.helper('createTable', function(buyOrders, sellOrders, options){
     var length = (buyOrders.length < sellOrders.length) ? sellOrders.length : buyOrders.length;
 
     var build = '';
-    build+='<table>'+
-            '<tr>' +
-                '<th style = "text-align:center" colspan="2">Buy</th>' +
-                '<th style = "text-align:center" colspan="2">Sell</th>' +
+    build+='<table class="table table-bordered">'+
+            '<tr class="active">' +
+                '<th colspan="2">Buy</th>' +
+                '<th colspan="2">Sell</th>' +
             '</tr>' +
             '<tr>' +
                 '<td>Volume</td>' +
@@ -99,10 +99,10 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
 
     var length =  buyGroups.length < sellGroups.length ? sellGroups.length : buyGroups.length;
 
-    var build = '<table>' +
-                '<tr>' +
-                    '<th style = "text-align:center" colspan="3">Buy</th>' +
-                '<th style = "text-align:center" colspan="3">Sell</th>' +
+    var build = '<table class="table table-bordered">' +
+                '<tr class="active">' +
+                    '<th colspan="3">Buy</th>' +
+                    '<th colspan="3">Sell</th>' +
                 '</tr>' +
                 '<tr>' +
                     '<td>#</td>' +
@@ -121,13 +121,6 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
             build += '<td>' + buyGroups[i].count + '</td>';
             build += '<td>' + buyGroups[i].price + '</td>';
             build += '<td>' + buyGroups[i].shares + '</td>';
-        if (i < buyOrders.length) {
-            build += '<td>0</td>';
-            build += '<td>' + buyOrders[i].get('purchasePrice') + '</td>';
-            build += '<td>' + buyOrders[i].get('numOfShares') + '</td>';
-        }
-        else {//buy orders is done
-            build += '<td></td><td></td><td></td>';
         }
         if(i < sellOrders.length){
             build += '<td>' + sellGroups[i].shares + '</td>';

@@ -1,0 +1,46 @@
+/************************************
+GENERAL
+************************************/
+
+body{
+	background-color: #fff;
+	margin:0px;
+	padding:0px;
+	overflow: scroll;
+}
+
+/* default for links */
+a {
+	text-decoration: none;
+}
+
+/* img element */
+img {
+	max-width: 100%; /* fills image's parent elemet */
+}
+
+/* warpper element -> wraps section and footer */
+#wrapper{
+	max-width: 1040px;
+	margin: 0 auto;
+	padding: 0 5%;
+	display: block;
+	clear: both;
+}
+
+/* order forms */
+.placeorder {
+	width:40%;
+	float:left;
+}
+
+/* symbol */
+.symbol {
+	max-width:20%;
+	float:left;
+	padding-left:50px
+}
+
+td, th {
+	text-align: center;
+}

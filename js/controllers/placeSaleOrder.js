@@ -6,7 +6,6 @@ Stock.PlaceSaleOrderController = Ember.ObjectController.extend({
     sortedSellOrder: Ember.computed.sort('model.sellOrder', 'sortSellProperties'),
 
     actions: {
-
         submit: function(company){
             console.log("submitting");
 
