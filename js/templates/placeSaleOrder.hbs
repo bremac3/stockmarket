@@ -1,29 +1,16 @@
-<div style = "max-width:50%;float:left;">
-<h3>Place Sale Order</h3>
-
-<div>
+<div class="placeorder">
+    <h3>Place Sell</h3>
     <form>
-        <div class="row">
-            <div class="large-12 columns">
-                <label>Number of Shares
-                    {{input value=numOfShares  id="numOfShares" type="text" }}
-                </label>
-            </div>
+        <div class="form-group">
+            <label>Number of Shares</label>
+            {{input value=numOfShares  id="numOfShares" class="form-control" type="number"}}
         </div>
-        <div class="row">
-            <div class="large-12 columns">
-                <label>Purchase Price
-                    {{input value=purchasePrice  id="purchasePrice" }}
-                </label>
-            </div>
+        <div class="form-group">
+            <label>Purchase Price</label>
+            {{input value=purchasePrice id="purchasePrice" class="form-control" type="number"}}
         </div>
     </form>
 
-
-    <a href="#" class="button radius" {{action 'submit' model}}>Submit</a>
-    <a href="#" class="button radius" {{action 'cancel'}}>Cancel</a>
-
-    <!--div with outlet for symbol-->
-
-</div>
+    <button class="btn btn-primary" {{action 'submit' model}}>Submit</button>
+    <button class="btn btn-primary" {{action 'cancel'}}>Cancel</button>
 </div>
