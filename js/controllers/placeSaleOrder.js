@@ -10,18 +10,18 @@ Stock.PlaceSaleOrderController = Ember.ObjectController.extend({
             console.log("submitting");
 
             var buyOrder = this.get('sortedBuyOrder');
-            //console.log(this.get('sortedSellOrder'));
             var sellShares = this.get('numOfShares');
 
             var companyPrice;
-            //var companyShareChange;
             var companyShareVolume = 0;
+            var transaction = false;
 
             for(var i = 0; i < buyOrder.length; i++) {
                 //console.log(sellOrder[i].get('purchasePrice'));
                 if (this.get('purchasePrice') == buyOrder[i].get('purchasePrice')) {
                     console.log('match!');
                     companyPrice = this.get('purchasePrice');
+                    transaction = true;
                     if (parseInt(sellShares) > buyOrder[i].get('numOfShares')) {
                         //delete buy order
                         //adjust sell order
@@ -29,7 +29,7 @@ Stock.PlaceSaleOrderController = Ember.ObjectController.extend({
                         console.log('case 1');
 
                         sellShares = sellShares - buyOrder[i].get('numOfShares');
-                        companyShareVolume += parseInt(sellShares);
+                        companyShareVolume += parseInt(buyOrder[i].get('numOfShares'));
                         this.store.find('buyOrder', buyOrder[i].id).then(function(buyOrder){
                             buyOrder.destroyRecord();
                         });
@@ -67,7 +67,27 @@ Stock.PlaceSaleOrderController = Ember.ObjectController.extend({
                 }
             }
 
-            console.log(companyShareVolume);
+            if(transaction) {
+                this.store.find('company', company.id).then(function (Company) {
+                    if (Company.get('shareVolume'))
+                        Company.set('shareVolume', (Company.get('shareVolume') + companyShareVolume));
+                    else
+                        Company.set('shareVolume', companyShareVolume);
+                    Company.set('currentPrice', companyPrice);
+
+                    var companyChangeNet = parseInt(Company.get('currentPrice')) - parseInt(Company.get('openPrice'));
+                    if (companyChangeNet < 0)
+                        Company.set('changeUrl', 'down.png');
+                    else if (companyChangeNet > 0)
+                        Company.set('changeUrl', 'up.png');
+                    else
+                        Company.set('changeUrl', 'noChange.png');
+
+                    Company.set('changeVolume', (Math.abs(companyChangeNet)).toFixed(2));
+                    var companyChangePercent = parseInt(Company.get('changeVolume')) / parseInt(Company.get('openPrice'));
+                    Company.set('changePercent', (Math.abs(companyChangePercent)).toFixed(3) + '%');
+                });
+            }
 
             if(parseInt(sellShares) > 0){
                 console.log("adding");

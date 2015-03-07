@@ -12,12 +12,16 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
             //console.log(this.get('sortedSellOrder'));
             var buyShares = this.get('numOfShares');
 
+            var companyPrice;
+            var companyShareVolume = 0;
+            var transaction = false;
 
             for(var i = 0; i < sellOrder.length; i++) {
                 //console.log(sellOrder[i].get('purchasePrice'));
                 if (this.get('purchasePrice') == sellOrder[i].get('purchasePrice')) {
                     console.log('match!');
-
+                    companyPrice = this.get('purchasePrice');
+                    transaction = true;
                     if (parseInt(buyShares) > sellOrder[i].get('numOfShares')) {
                         //console.log(parseInt(buyShares) < sellOrder[i].get('numOfShares') );
                         //console.log(sellOrder[i].get('numOfShares'));
@@ -27,6 +31,7 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
                         console.log('case 1');
 
                         buyShares = buyShares - sellOrder[i].get('numOfShares');
+                        companyShareVolume += parseInt(sellOrder[i].get('numOfShares'));
                         this.store.find('sellOrder', sellOrder[i].id).then(function(sellOrder){
                             sellOrder.destroyRecord();
                         });
@@ -42,6 +47,7 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
                         //adjust sell order
 
                         var sellShares = sellOrder[i].get('numOfShares') - buyShares;
+                        companyShareVolume += parseInt(buyShares);
                         this.store.find('sellOrder', sellOrder[i].id).then(function(sellOrder){
                             sellOrder.set('numOfShares', sellShares);
                         });
@@ -54,7 +60,7 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
 
                         //remove sell order
                         //don't add buy order
-
+                        companyShareVolume += parseInt(buyShares);
                         this.store.find('sellOrder', sellOrder[i].id).then(function(sellOrder){
                             sellOrder.destroyRecord();
                         });
@@ -62,9 +68,32 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
                         buyShares = 0;
                         break;
                     }
-
-
                 }
+
+            }
+
+
+            if(transaction) {
+                this.store.find('company', company.id).then(function (Company) {
+                    if (Company.get('shareVolume'))
+                        Company.set('shareVolume', (Company.get('shareVolume') + companyShareVolume));
+                    else
+                        Company.set('shareVolume', companyShareVolume);
+                    Company.set('currentPrice', companyPrice);
+
+                    var companyChangeNet = parseInt(Company.get('currentPrice')) - parseInt(Company.get('openPrice'));
+                    if (companyChangeNet < 0)
+                        Company.set('changeUrl', 'down.png');
+                    else if (companyChangeNet > 0)
+                        Company.set('changeUrl', 'up.png');
+                    else
+                        Company.set('changeUrl', 'noChange.png');
+
+                    Company.set('changeVolume', (Math.abs(companyChangeNet)).toFixed(2));
+                    var companyChangePercent = parseInt(Company.get('changeVolume')) / parseInt(Company.get('openPrice'));
+                    Company.set('changePercent', (Math.abs(companyChangePercent)).toFixed(3) + '%');
+
+                });
             }
 
             if(parseInt(buyShares) > 0){

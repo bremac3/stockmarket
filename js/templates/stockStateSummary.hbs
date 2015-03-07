@@ -21,6 +21,7 @@
                 <td>{{#link-to 'marketByOrder' item.id}}{{item.name}}{{/link-to}}</td>
                 <td>{{item.openPrice}}</td>
                 <td>{{item.currentPrice}}</td>
+                <td>{{item.changeVolume}}&nbsp;<img {{bind-attr src="item.changeUrl"}}/>&nbsp;{{item.changePercent}}</td>
                 <td>{{item.changeVolume}}</td>
                 <td>{{item.shareVolume}}</td>
                 <td>

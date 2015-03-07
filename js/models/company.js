@@ -4,8 +4,10 @@ Stock.Company = DS.Model.extend({
     openPrice: DS.attr(),
     currentPrice: DS.attr(),
     changeVolume: DS.attr(),
+    changePercent: DS.attr(),
     shareVolume: DS.attr(),
     url: DS.attr(),
+    changeUrl: DS.attr(),
     buyOrder: DS.hasMany('buyOrder'),
     sellOrder: DS.hasMany('sellOrder')
 
