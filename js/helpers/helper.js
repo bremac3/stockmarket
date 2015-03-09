@@ -114,13 +114,10 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
                     '<td>Price</td>' +
                     '<td>#</td>' +
                 '</tr>';
-
-    //add the buy column
-
     for(var i = 0; i < length; i++){
-       if (i < 10) {
+        if (i < 10) {
             build += '<tr>';
-            if (i < buyGroups.length) {
+            if (buyGroups[i] !== undefined) {
                 build += '<td>' + buyGroups[i].count + '</td>';
                 build += '<td>' + buyGroups[i].price + '</td>';
                 build += '<td>' + buyGroups[i].shares + '</td>';
@@ -128,12 +125,12 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
             else {
                 build += '<td></td><td></td><td></td>';
             }
-            if(i < sellOrders.length){
+            if(sellGroups[i] !== undefined){
                 build += '<td>' + sellGroups[i].shares + '</td>';
                 build += '<td>' + sellGroups[i].price + '</td>';
                 build += '<td>' + sellGroups[i].count + '</td>';
             }
-            else{//buy orders is done
+            else{
                 build += '<td></td><td></td><td></td>';
             }
             build+='</tr>';
