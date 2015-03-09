@@ -14,7 +14,7 @@ Stock.PlaceBidOrderController = Ember.ObjectController.extend({
             var transaction = false;
 
             for (var i = 0; i < sellOrder.length; i++) {
-                if (this.get('purchasePrice') == sellOrder[i].get('purchasePrice')) {
+                if (parseFloat(this.get('purchasePrice')) >= sellOrder[i].get('purchasePrice')) {
                     companyPrice = this.get('purchasePrice');
                     transaction = true;
                     if (parseInt(buyShares) > sellOrder[i].get('numOfShares')) {
