@@ -15,10 +15,11 @@ Stock.PlaceSellOrderController = Ember.ObjectController.extend({
             var transaction = false;
 
             for(var i = 0; i < buyOrder.length; i++) {
+                //compate buyorder price and inputted price
                 if (parseFloat(this.get('purchasePrice')) <= buyOrder[i].get('purchasePrice')) {
                     companyPrice = this.get('purchasePrice');
                     transaction = true;
-                    if (parseInt(sellShares) > buyOrder[i].get('numOfShares')) {
+                    if (parseInt(sellShares) > buyOrder[i].get('numOfShares')) { //if more sell than buy shares
                         //delete buy order
                         //adjust sell order
                         sellShares = sellShares - buyOrder[i].get('numOfShares');
@@ -27,7 +28,7 @@ Stock.PlaceSellOrderController = Ember.ObjectController.extend({
                             buyOrder.destroyRecord();
                         });
                     }
-                    else if (parseInt(sellShares) < buyOrder[i].get('numOfShares')) {
+                    else if (parseInt(sellShares) < buyOrder[i].get('numOfShares')) { //if more buy than sell shares
                         //don't add sell order
                         //adjust buy order
 
@@ -53,6 +54,7 @@ Stock.PlaceSellOrderController = Ember.ObjectController.extend({
                 }
             }
 
+            //update company info
             if(transaction) {
                 this.store.find('company', company.id).then(function (Company) {
                     if (Company.get('shareVolume'))

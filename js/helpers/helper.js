@@ -1,5 +1,5 @@
 Ember.Handlebars.helper('createTable', function(buyOrders, sellOrders, options){
-
+    //create buy and sell tables
     var length = (buyOrders.length < sellOrders.length) ? sellOrders.length : buyOrders.length;
 
     var build = '';
@@ -17,14 +17,14 @@ Ember.Handlebars.helper('createTable', function(buyOrders, sellOrders, options){
     for(var i = 0; i < length; i++) {
         if (i < 10) {
             build += '<tr>';
-            if (i < buyOrders.length) {
+            if (i < buyOrders.length) { //if there are buy orders to add to table 
                 build += '<td>' + buyOrders[i].get('numOfShares') + '</td>';
                 build += '<td>' + buyOrders[i].get('purchasePrice') + '</td>';
             }
             else {//buy orders is done
                 build += '<td></td><td></td>';
             }
-            if(i < sellOrders.length){
+            if(i < sellOrders.length){ //if there are sell orders to add to table 
                 build += '<td>' + sellOrders[i].get('purchasePrice') + '</td>';
                 build += '<td>' + sellOrders[i].get('numOfShares') + '</td>';
             }
@@ -39,7 +39,7 @@ Ember.Handlebars.helper('createTable', function(buyOrders, sellOrders, options){
 });
 
 Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, options){
-
+    //create market by price table
     var buyGroups = [];
     var sellGroups = [];
 
@@ -117,20 +117,20 @@ Ember.Handlebars.helper('createMarketByPrice', function(buyOrders, sellOrders, o
     for(var i = 0; i < length; i++){
         if (i < 10) {
             build += '<tr>';
-            if (buyGroups[i] !== undefined) {
+            if (buyGroups[i] !== undefined) { //if there are buy orders to add to table
                 build += '<td>' + buyGroups[i].count + '</td>';
                 build += '<td>' + buyGroups[i].price + '</td>';
                 build += '<td>' + buyGroups[i].shares + '</td>';
             }
-            else {
+            else { //if buy orders done
                 build += '<td></td><td></td><td></td>';
             }
-            if(sellGroups[i] !== undefined){
+            if(sellGroups[i] !== undefined){ //if there are buy orders to add to table 
                 build += '<td>' + sellGroups[i].shares + '</td>';
                 build += '<td>' + sellGroups[i].price + '</td>';
                 build += '<td>' + sellGroups[i].count + '</td>';
             }
-            else{
+            else{ //if sell orders done
                 build += '<td></td><td></td><td></td>';
             }
             build+='</tr>';
